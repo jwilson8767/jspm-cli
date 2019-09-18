@@ -13,7 +13,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-import * as workerFarm from 'worker-farm';
+import workerFarm from 'worker-farm';
 import { ProcessedPackageConfig, Conditional, serializePackageConfig, PackageTarget } from '../install/package';
 import { Logger } from '../project';
 import { JspmUserError } from '../utils/common';

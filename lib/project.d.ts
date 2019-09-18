@@ -35,6 +35,7 @@ export interface ProjectConfiguration {
         [name: string]: Registry;
     };
     cli?: boolean;
+    multiProject?: boolean;
 }
 export declare class Project {
     projectPath: string;

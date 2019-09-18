@@ -67,17 +67,17 @@ const winBin = (binModulePath: string) => `@setlocal
 @node "%~dp0\\..\\${binModulePath}" %*
 `;
 
-let _isCygwin;
-function isCygwin () {
-  if (typeof _isCygwin === 'boolean')
-    return _isCygwin;
-  try {
-    if (require('child_process').execSync('uname -s', { stdio: 'pipe' }).toString().match(/^(CYGWIN|MINGW32|MINGW64)/))
-      return _isCygwin = true;
-  }
-  catch (e) {}
-  return _isCygwin = false;
-}
+// let _isCygwin;
+// function isCygwin () {
+//   if (typeof _isCygwin === 'boolean')
+//     return _isCygwin;
+//   try {
+//     if (require('child_process').execSync('uname -s', { stdio: 'pipe' }).toString().match(/^(CYGWIN|MINGW32|MINGW64)/))
+//       return _isCygwin = true;
+//   }
+//   catch (e) {}
+//   return _isCygwin = false;
+// }
 
 export function getBin () {
   let loader = require.resolve('@jspm/resolve/loader.mjs');

@@ -24,10 +24,12 @@ import { exec as execFunc, run as runFunc } from './exec';
 import path = require('path');
 export { build } from './build';
 
+
+
 if (process.env.globalJspm !== undefined) {
-  process.once('unhandledRejection', err => {
+  process.once('unhandledRejection', (err: {stack?: string}) => {
     log('Internal Error: Unhandled promise rejection.', LogType.err);
-    logErr(err.stack || err);
+    logErr( String(err.stack || err));
     process.exit(1);
   });
   process.once('SIGINT', () => {
